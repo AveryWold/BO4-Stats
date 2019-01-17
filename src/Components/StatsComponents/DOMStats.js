@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Tbody, Tr, Td } from 'react-super-responsive-table';
-import '../Styles/Stats.css';
+import '../../Styles/Stats.css';
 
 class DOMStats extends Component {
     render() {
