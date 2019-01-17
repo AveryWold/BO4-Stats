@@ -1,32 +1,121 @@
-.App {
-  text-align: center;
+body {
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+  url('https://wallpapercave.com/wp/wp3400358.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  height: 100%;
+  background-size: cover;
+  clear: both;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.App {
+  text-align: center;
+  height: 100%;
+  flex-flow: column;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: orangered;
+  background-color: black;
+  border-bottom: 1px solid orangered;
 }
 
-.App-link {
-  color: #61dafb;
+.Background {
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+  url('https://wallpapercave.com/wp/wp3400358.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  padding-top: 200px;
+  height: 100%;
+  background-size: cover;
+  clear: both;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 20%;
+  height: 200px;
+  position: relative;
+  left: auto;
+  background: white;
+}
+
+.bo4-logo {
+  float: left;
+  border-right: 1px solid orangered;
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  padding:15px 15px; 
+  background:#ccc; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  margin-left: 25px;
+  background: black;
+  color: orangered;
+  border: 1px solid orangered;
+
+}
+
+.form {
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.header {
+  width: 25%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -155px;
+  font-weight: 600;
+}
+
+.loading {
+  color: orangered;
+}
+
+ul.header {
+  background-color:#2B2F3F;
+  padding: 0;
+  -webkit-box-shadow: 3px 7px 10px 0px rgba(45, 46, 67, 0.85);
+  -moz-box-shadow:    3px 7px 10px 0px rgba(45, 46, 67, 0.85);
+  box-shadow:         3px 7px 10px 0px rgba(45, 46, 67, 0.85);
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+
+.active {
+  background-color: #5EA1A6;
+}
+
+a {
+  text-decoration: none;
 }

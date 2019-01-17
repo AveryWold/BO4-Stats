@@ -1,0 +1,27 @@
+import React, { Component } from 'react';
+import '../Styles/Stats.css';
+import OverallStats from './OverallStats';
+import TDMStats from './TDMStats';
+import DOMStats from './DOMStats';
+
+class Stats extends Component {
+  render() {
+    const {username, ekia, kills, deaths, wins, losses, ekiapergame, scoreperminute,
+        tdmwins, tdmdeaths, tdmkills, tdmlosses,
+        domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak} = this.props;
+        console.log("PROPS STATS", this.props);
+
+    return (
+      <div className="stats-table">
+        <h1>
+          {'User Stats for ' + JSON.stringify(username)}
+        </h1>
+        <OverallStats ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={this.props.longestkillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute} />
+        <TDMStats  tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses} />
+        <DOMStats domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} />
+      </div>
+    );
+  }
+}
+
+export default(Stats);
