@@ -30,7 +30,6 @@ class UserNameForm extends Component {
 
     checkGamerTagInput(e) {
         e.preventDefault();
-        console.log(this.props.username, "Validating");
 
         let newFormErrors = this.state.formErrors;
         if (this.props.username === "") {

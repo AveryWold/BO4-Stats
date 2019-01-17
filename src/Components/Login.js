@@ -34,7 +34,7 @@ class Login extends Component {
     const {username} = this.props;
     this.setState({isLoading: true});
     const url = 'https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/psn/gamer/' + username + '/profile/'
-    axios.get(url, {timeout:1000})
+    axios.get(url) //, {timeout:10000})
     .then(json => (
       {
         username: json.data.data.username,
