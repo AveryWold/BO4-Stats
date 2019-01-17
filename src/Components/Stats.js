@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../Styles/Stats.css';
-import OverallStats from './OverallStats';
-import TDMStats from './TDMStats';
-import DOMStats from './DOMStats';
+import OverallStats from './StatsComponents/OverallStats';
+import TDMStats from './StatsComponents/TDMStats';
+import DOMStats from './StatsComponents/DOMStats';
 
 class Stats extends Component {
   render() {

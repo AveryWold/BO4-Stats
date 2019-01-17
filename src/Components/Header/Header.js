@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../../App.css';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props){
@@ -12,10 +13,19 @@ class Header extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={url} className="bo4-logo" alt="logo"/>
+          {/* <Link to="/" > */}
+            <img src={url} className="bo4-logo" alt="logo"/>
+          {/* </Link> */}
           <p className="header">
             Check BO4 Stats
           </p>
+          <div className="links">
+            <ul>
+              <li><Link exact to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+            </ul>
+          </div>
         </header>
       </div>
     );

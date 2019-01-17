@@ -22,7 +22,6 @@ class UserNameForm extends Component {
         this.checkGamerTagInput = this.checkGamerTagInput.bind(this);
     }
 
-    // WITH REDUX
     handleChange = (event) => {
         const { dispatch } = this.props;
         dispatch(updateUserName(event.target.value));
@@ -30,7 +29,6 @@ class UserNameForm extends Component {
 
     checkGamerTagInput(e) {
         e.preventDefault();
-
         let newFormErrors = this.state.formErrors;
         if (this.props.username === "") {
             newFormErrors.validGamerTag = 'Please enter a valid gamer tag'
