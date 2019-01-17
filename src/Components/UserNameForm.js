@@ -3,12 +3,13 @@ import FormErrors from './FormErrors';
 import '../App.css';
 import UserNameInput from './UserNameInput'
 import Login from './Login';
+import { connect } from 'react-redux';
+import { updateUserName } from '../Actions/UserInfo';
 
 class UserNameForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
             toGameStats: false,
             formErrors: {
               validGamerTag: '',
@@ -21,26 +22,19 @@ class UserNameForm extends Component {
         this.checkGamerTagInput = this.checkGamerTagInput.bind(this);
     }
 
-    handleChange(event) {
-        // event.preventDefault();
-        this.setState({
-            username: event.target.value,
-        });
+    // WITH REDUX
+    handleChange = (event) => {
+        const { dispatch } = this.props;
+        dispatch(updateUserName(event.target.value));
     }
-    // handleChange = (event) => {
-    //     const { dispatch } = this.props;
-    //     dispatch(updateUserName(event.target.value));
-    // }
 
     checkGamerTagInput(e) {
         e.preventDefault();
-        // CONST DOESN'T WORK?
-        // const {username} = this.state.username;
-        console.log(this.state.username, "Validating");
+        console.log(this.props.username, "Validating");
 
         let newFormErrors = this.state.formErrors;
-        if (this.state.username === "") {
-            newFormErrors.validGamerTag = 'Please enter your gamer tag'
+        if (this.props.username === "") {
+            newFormErrors.validGamerTag = 'Please enter a valid gamer tag'
             this.setState({formErrors: newFormErrors, showFormErrors: true})
         }
         else {
@@ -49,7 +43,8 @@ class UserNameForm extends Component {
     }
 
     render() {
-        const {toGameStats, username} = this.state;
+        const {toGameStats} = this.state;
+        const {username} = this.props
         return (
             <div className="form">
                 {!toGameStats ? (
@@ -67,11 +62,10 @@ class UserNameForm extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     return {
-//       username: state.UserInfo.username
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+      username: state.UserInfo.username
+    }
+}
 
-// export default connect(mapStateToProps)(UserNameForm)
-export default(UserNameForm)
+export default connect(mapStateToProps)(UserNameForm)
