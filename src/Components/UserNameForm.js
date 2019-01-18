@@ -51,7 +51,7 @@ class UserNameForm extends Component {
                 </form>
                 ) : (
                     <div>
-                    <Login username={username} toGameStats={toGameStats} />
+                    <Login username={username} />
                   </div>
                 )}
             </div>

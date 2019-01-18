@@ -106,7 +106,7 @@ class Login extends Component {
                          domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} />
                 </div>
             ) : (
-              <p className="loading">Loading...</p>
+              <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
             )}
           </div>
       </div>
