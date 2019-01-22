@@ -9,12 +9,24 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Notfound from './Components/NotFound';
 import About from './Components/Header/About';
 import Contact from './Components/Header/Contact';
-import Stats from './Components/Stats';
-// import Login from './Components/Login';
+import Login from './Components/Login';
 
 Store.subscribe(() => {
     console.log(Store.getState());
 })
+
+class MyRoute extends React.Component {
+    render() {
+      var { Component, path, exact, passedProps } = this.props;
+      return (
+        <Route
+          path={path}
+          exact={exact}
+          render={props => <Component {...props} {...passedProps} />}
+        />
+      );
+    }
+  };
 
 ReactDOM.render(
     <Provider store={Store}>
@@ -23,8 +35,7 @@ ReactDOM.render(
                 <Route exact path="/" component={App} />
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
-                {/* <Route path="/login" render={(props) => <Login {...props} username={this.props.username} /> } /> */}
-                <Route path="/stats/:username" component={Stats} />
+                <MyRoute path="/stats/:username" Component={Login} />
                 <Route component={Notfound} />
             </Switch>
         </Router>

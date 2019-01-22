@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 import FormErrors from './FormErrors';
 import '../App.css';
 import UserNameInput from './UserNameInput'
-import Login from './Login';
 import { connect } from 'react-redux';
 import { updateUserName } from '../Actions/UserInfo';
+import { Redirect } from 'react-router-dom';
 
 class UserNameForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            username: null,
             toGameStats: false,
             formErrors: {
               validGamerTag: '',
             },
             isUserNameValid: false,
             showFormErrors: false,
+            redirectToStats: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -30,32 +32,45 @@ class UserNameForm extends Component {
     checkGamerTagInput(e) {
         e.preventDefault();
         let newFormErrors = this.state.formErrors;
+        let validUsername = this.state.isUserNameValid;
+
+
         if (this.props.username === "") {
             newFormErrors.validGamerTag = 'Please enter a valid gamer tag'
-            this.setState({formErrors: newFormErrors, showFormErrors: true})
+            this.setState({formErrors: newFormErrors, showFormErrors: true, isUserNameValid: validUsername});
+            console.log ("INVALID");
         }
         else {
-            this.setState({showFormErrors: false, toGameStats: true, isValidGamerTag: true  });
+            this.setState({showFormErrors: false, toGameStats: true, isUserNameValid: true, redirectToStats: true });
+            console.log (this.props.username, "IS VALID", this.props);
         }
     }
 
     render() {
-        const {toGameStats} = this.state;
-        const {username} = this.props
-        return (
-            <div className="form">
-                {!toGameStats ? (
-                <form onSubmit={this.checkGamerTagInput.bind(this)}>
-                    <UserNameInput username={this.props.username} onChange={this.handleChange} />
-                    {(!this.state.isValidGamerTag) && this.state.showFormErrors && <FormErrors errors={this.state.formErrors} />}
+        const {toGameStats} = this.props;
+        const {username} = this.props;
+        if (this.state.redirectToStats) {
+            return (
+                <Redirect to={{
+                    pathname: `/stats/${this.props.username}`,
+                    state: {
+                        username:this.props.username
+                    }
+                }}/>
+            )
+        }
+
+        if (!toGameStats){
+            return(
+                <form>
+                    <p>
+                        <UserNameInput username={username} onChange={this.handleChange} />
+                        <button onClick={this.checkGamerTagInput}>Get Stats</button>
+                    </p>
+                    {(!this.state.isUserNameValid) && this.state.showFormErrors && <FormErrors errors={this.state.formErrors} />}
                 </form>
-                ) : (
-                    <div>
-                    <Login username={username} />
-                  </div>
-                )}
-            </div>
-        );
+            );
+        }
     }
 }
 

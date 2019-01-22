@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Stats from './Stats';
 import '../App.css';
+import Header from './Header/Header';
 
 class Login extends Component {
   constructor(props){
@@ -31,7 +32,7 @@ class Login extends Component {
   }
 
   getStats() {
-    const {username} = this.props;
+    const {username} = this.props.history.location.state;
     this.setState({isLoading: true});
     const url = 'https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/psn/gamer/' + username + '/profile/'
     axios.get(url) //, {timeout:10000})
@@ -84,7 +85,7 @@ class Login extends Component {
                                     domkillstreak: newData.domkillstreak,
                                     isLoading: false
       }))
-    .catch(error => console.log(error))
+    .catch(error => alert(error))
   }
 
   componentDidMount(){
@@ -98,12 +99,14 @@ class Login extends Component {
 
     return (
       <div>
+          <Header/>
           <div>
             {!isLoading ? (
                 <div>
                   <Stats username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute}
                          tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
-                         domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} />
+                         domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
+                  />
                 </div>
             ) : (
               <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>

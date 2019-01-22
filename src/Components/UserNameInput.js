@@ -5,7 +5,6 @@ export default class UserNameInput extends Component{
     return (
       <p>
         <input type="text" username={this.props.username} onChange={this.props.onChange} placeholder="Enter your PSN gamer tag"/>
-        <input type="submit" value="Get Stats" />
       </p>
     )
   }

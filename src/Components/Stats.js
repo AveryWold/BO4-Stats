@@ -9,7 +9,6 @@ class Stats extends Component {
     const {username, ekia, kills, deaths, wins, losses, ekiapergame, scoreperminute,
         tdmwins, tdmdeaths, tdmkills, tdmlosses,
         domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak} = this.props;
-        console.log("PROPS STATS", this.props);
 
     return (
       <div className="stats-table">
