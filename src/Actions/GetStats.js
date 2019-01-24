@@ -25,7 +25,6 @@ import { updateEkia,
          updateLosses, 
          updateIsLoading
         } from './UserInfo';
-import { timeout } from 'q';
 
 const statsIsFetching = () => {
     return {
