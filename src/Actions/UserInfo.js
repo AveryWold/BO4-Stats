@@ -18,7 +18,8 @@ import {
     USER_INFO_UPDATE_DOMLOSSES,
     USER_INFO_UPDATE_DOMDEFENDS,
     USER_INFO_UPDATE_DOMOFFENDS,
-    USER_INFO_UPDATE_DOMKILLSTREAK
+    USER_INFO_UPDATE_DOMKILLSTREAK,
+    USER_INFO_IS_LOADING
 } from '../Reducers/UserInfo';
 
 export const updateUserName = (username) => {
@@ -158,5 +159,12 @@ export const updateDomKillstreak = (domkillstreak) => {
     return {
         type: USER_INFO_UPDATE_DOMKILLSTREAK,
         payload: domkillstreak
+    };
+}
+
+export const updateIsLoading = (isLoading) => {
+    return {
+        type: USER_INFO_IS_LOADING,
+        payload: isLoading
     };
 }

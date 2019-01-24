@@ -1,9 +1,9 @@
 export const USER_INFO_UPDATE_USER_NAME = "USER_INFO_UPDATE_USER_NAME";
 export const USER_INFO_UPDATE_EKIA = "USER_INFO_UPDATE_EKIA";
 export const USER_INFO_UPDATE_KILLS = "USER_INFO_UPDATE_KILLS";
-export const USER_INFO_UPDATE_DEATHS = "USER_INFO_UPDATE_EKIA";
-export const USER_INFO_UPDATE_WINS = "USER_INFO_UPDATE_EKIA";
-export const USER_INFO_UPDATE_LOSSES = "USER_INFO_UPDATE_EKIA";
+export const USER_INFO_UPDATE_DEATHS = "USER_INFO_UPDATE_DEATHS";
+export const USER_INFO_UPDATE_WINS = "USER_INFO_UPDATE_WINS";
+export const USER_INFO_UPDATE_LOSSES = "USER_INFO_UPDATE_LOSSES";
 export const USER_INFO_UPDATE_LONGESTKILLSTREAK = "USER_INFO_UPDATE_LONGESTKILLSTREAK";
 export const USER_INFO_UPDATE_EKIAPERGAME = "USER_INFO_UPDATE_EKIAPERGAME";
 export const USER_INFO_UPDATE_SCOREPERMINUTE = "USER_INFO_UPDATE_SCOREPERMINUTE";
@@ -18,7 +18,7 @@ export const USER_INFO_UPDATE_DOMLOSSES = "USER_INFO_UPDATE_DOMLOSSES";
 export const USER_INFO_UPDATE_DOMDEFENDS = "USER_INFO_UPDATE_DOMDEFENDS";
 export const USER_INFO_UPDATE_DOMOFFENDS = "USER_INFO_UPDATE_DOMOFFENDS";
 export const USER_INFO_UPDATE_DOMKILLSTREAK = "USER_INFO_UPDATE_DOMKILLSTREAK";
-
+export const USER_INFO_IS_LOADING = "USER_INFO_IS_LOADING";
 
 const UserInfo = (state={}, action) => {
     switch(action.type){
@@ -62,6 +62,8 @@ const UserInfo = (state={}, action) => {
             return {...state, domoffends: action.payload }
         case USER_INFO_UPDATE_DOMKILLSTREAK:
             return {...state, domkillstreak: action.payload }
+        case USER_INFO_IS_LOADING:
+            return {...state, isLoading: action.payload }
         default:
             return state;
     }

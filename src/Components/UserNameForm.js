@@ -72,7 +72,7 @@ class UserNameForm extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      username: state.UserInfo.username
+      username: state.UserInfo.username,
     }
 }
 

@@ -19,7 +19,8 @@ export default {
         domlosses: null,
         domdefends: null,
         domoffends: null,
-        domkillstreak: null
+        domkillstreak: null,
+        isLoading: true
     },
     GetStats: {
         isFetching: false,

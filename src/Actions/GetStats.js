@@ -4,7 +4,28 @@ import {
     GET_STATS_IS_SUCCESSFUL    
 }from '../Reducers/GetStats';
 import axios from 'axios';
-import { updateEkia, updateKills, updateDeaths, updateWins, updateLongestKillstreak, updateEkiaPerGame, updateScorePerMinute, updateTdmKills, updateTdmDeaths, updateTdmLosses, updateDomKills, updateDomDeaths, updateDomWins, updateDomLosses, updateDomDefends, updateDomOffends, updateDomKillstreak, updateLosses } from './UserInfo';
+import { updateEkia, 
+         updateKills, 
+         updateDeaths, 
+         updateWins, 
+         updateLongestKillstreak, 
+         updateEkiaPerGame, 
+         updateScorePerMinute, 
+         updateTdmKills, 
+         updateTdmDeaths, 
+         updateTdmWins,
+         updateTdmLosses, 
+         updateDomKills, 
+         updateDomDeaths, 
+         updateDomWins, 
+         updateDomLosses, 
+         updateDomDefends, 
+         updateDomOffends, 
+         updateDomKillstreak, 
+         updateLosses, 
+         updateIsLoading
+        } from './UserInfo';
+import { timeout } from 'q';
 
 const statsIsFetching = () => {
     return {
@@ -55,7 +76,6 @@ const statsFetchData = (url) => {
             domkillstreak: json.data.data.mp.lifetime.mode.dom.killStreak,
           }))
             .then((newData) => {
-                dispatch(statsIsSuccessful(newData));
                 dispatch(updateEkia(newData.ekia));
                 dispatch(updateKills(newData.kills));
                 dispatch(updateDeaths(newData.deaths));
@@ -67,7 +87,7 @@ const statsFetchData = (url) => {
 
                 dispatch(updateTdmKills(newData.tdmkills));
                 dispatch(updateTdmDeaths(newData.tdmdeaths));
-                dispatch(updateWins(newData.tdmwins));
+                dispatch(updateTdmWins(newData.tdmwins));
                 dispatch(updateTdmLosses(newData.tdmlosses));
 
                 dispatch(updateDomKills(newData.domkills));
@@ -77,6 +97,8 @@ const statsFetchData = (url) => {
                 dispatch(updateDomDefends(newData.domdefends));
                 dispatch(updateDomOffends(newData.domoffends));
                 dispatch(updateDomKillstreak(newData.domkillstreak));
+                dispatch(statsIsSuccessful(newData));
+                dispatch(updateIsLoading(false));
             })
             .catch(() => {
                 dispatch(statsHasErrors());
