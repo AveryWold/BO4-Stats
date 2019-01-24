@@ -10,7 +10,6 @@ class UserNameForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: null,
             toGameStats: false,
             formErrors: {
               validGamerTag: '',
@@ -34,15 +33,12 @@ class UserNameForm extends Component {
         let newFormErrors = this.state.formErrors;
         let validUsername = this.state.isUserNameValid;
 
-
         if (this.props.username === "") {
             newFormErrors.validGamerTag = 'Please enter a valid gamer tag'
             this.setState({formErrors: newFormErrors, showFormErrors: true, isUserNameValid: validUsername});
-            console.log ("INVALID");
         }
         else {
             this.setState({showFormErrors: false, toGameStats: true, isUserNameValid: true, redirectToStats: true });
-            console.log (this.props.username, "IS VALID", this.props);
         }
     }
 

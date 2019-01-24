@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import UserInfo from './UserInfo';
+import GetStats from './GetStats';
 
 const Reducers = combineReducers({
-    UserInfo
+    UserInfo, GetStats
 });
 
 export default Reducers;
