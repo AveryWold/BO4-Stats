@@ -1,1 +1,5 @@
-Added basic routing to app, working well.  Next step is to make more complex routes with props passing for login.
+Simple app which pulls Black Ops 4 stats on PSN for users and displays them.
+
+Uses redux
+
+Uses Routes
