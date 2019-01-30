@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import Stats from './Stats';
 import '../App.css';
 import Header from './Header/Header';
-import { getStats } from '../Actions/GetStats';
 import { connect } from 'react-redux';
 import { updateIsLoading } from '../Actions/UserInfo';
+import {getUser} from '../Actions/GetUser';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
   constructor(props){
@@ -15,33 +16,60 @@ class Login extends Component {
 
   componentDidMount(){
     const { dispatch } = this.props;
+    // const {username} = this.props.history.location.state;
     dispatch(updateIsLoading(true));
-    const {username} = this.props.history.location.state;
-    dispatch(getStats(username));
+    // dispatch(getUser(username));
   }
 
   render() {
-    const {username, ekia, kills, deaths, isLoading, wins, losses, longestKillstreak, ekiapergame, scoreperminute,
+      const {username, success, ekia, kills, deaths, isLoading, wins, losses, longestKillstreak, ekiapergame, scoreperminute,
             tdmwins, tdmdeaths, tdmkills, tdmlosses,
-            domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak} = this.props;
-
-    return (
-      <div>
-          <Header/>
+            domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak, isValid} = this.props;
+      if(isLoading){
+        return (
           <div>
-            {!isLoading ? (
-                <div>
-                  <Stats username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute}
-                         tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
-                         domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
-                  />
-                </div>
-            ) : (
-              <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
-            )}
+            <Header/>
+            <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
           </div>
-      </div>
-    );
+        )
+      }
+      if(!isLoading && success){
+        return (
+          <div>
+            <Header/>
+            <div>
+              <Stats isValid={isValid} username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute}
+                tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
+                domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
+              />
+            </div>
+          </div>
+        )
+      }
+      if(!success) {
+        return (
+          <Redirect to={{
+              pathname: "/"
+          }}/>
+      )
+      }
+    // return (
+    //   <div>
+    //       <Header/>
+    //       <div>
+    //         {!isLoading ? (
+    //             <div>
+    //               <Stats isValid={isValid} username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute}
+    //                      tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
+    //                      domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
+    //               />
+    //             </div>
+    //         ) : (
+    //           <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
+    //         )}
+    //       </div>
+    //   </div>
+    // );
   }
 }
 
@@ -67,7 +95,8 @@ const mapStateToProps = (state) => {
     domdefends: state.UserInfo.domdefends,
     domoffends: state.UserInfo.domoffends,
     domkillstreak: state.UserInfo.domkillstreak,
-    isLoading: state.UserInfo.isLoading
+    isLoading: state.UserInfo.isLoading,
+    success: state.GetUser.success
   }
 }
 

@@ -5,6 +5,7 @@ import UserNameInput from './UserNameInput'
 import { connect } from 'react-redux';
 import { updateUserName } from '../Actions/UserInfo';
 import { Redirect } from 'react-router-dom';
+import {getUser} from '../Actions/GetUser';
 
 class UserNameForm extends Component {
     constructor(props) {
@@ -23,7 +24,13 @@ class UserNameForm extends Component {
         this.checkGamerTagInput = this.checkGamerTagInput.bind(this);
     }
 
+    componentDidMount(){
+        // const { dispatch } = this.props;
+        // dispatch(updateUserName(""));
+    }
+
     handleChange = (event) => {
+        this.setState({showFormErrors:false});
         const { dispatch } = this.props;
         dispatch(updateUserName(event.target.value));
     }
@@ -32,9 +39,11 @@ class UserNameForm extends Component {
         e.preventDefault();
         let newFormErrors = this.state.formErrors;
         let validUsername = this.state.isUserNameValid;
+        const { dispatch } = this.props;
+        dispatch(getUser(this.props.username));
 
         if (this.props.username === "") {
-            newFormErrors.validGamerTag = 'Please enter a valid gamer tag'
+            newFormErrors.validGamerTag = 'Please enter a valid gamer tag';
             this.setState({formErrors: newFormErrors, showFormErrors: true, isUserNameValid: validUsername});
         }
         else {
@@ -73,6 +82,7 @@ class UserNameForm extends Component {
 const mapStateToProps = (state) => {
     return {
       username: state.UserInfo.username,
+      success: state.GetUser.success
     }
 }
 

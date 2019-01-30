@@ -27,5 +27,12 @@ export default {
         hasErrors: false,
         isSuccessful: false,
         data: null
+    },
+    GetUser: {
+        isFetching: false,
+        hasErrors: false,
+        isSuccessful: false,
+        data: null,
+        success: false
     }
 }
