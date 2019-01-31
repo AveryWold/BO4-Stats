@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
-import Header from './Header';
-import '../../App.css';
+import Header from '../Components/Header/Header';
+import '../App.css';
+import { Link } from 'react-router-dom';
 
-class About extends Component {
-    constructor(props){
-      super(props)
-      this.state = {};
-    }
-  
+class Oops extends Component {
     render() {
       return (
         <div className="App">
@@ -15,10 +11,8 @@ class About extends Component {
           <div className="Background"> 
             <div className="main">
               <div className="about">
-                <h1>ABOUT</h1>
-                <p>
-                  This is an app to check PSN black ops 4 stats
-                </p>
+                <h1>Oops, the gamertag you entered is not valid or has no stats!</h1>
+                <Link to="/"><button>Try Again</button></Link>
               </div>
             </div>
           </div>    
@@ -26,4 +20,4 @@ class About extends Component {
       );
     }
   }
-export default About
+export default Oops

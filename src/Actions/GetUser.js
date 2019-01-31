@@ -5,7 +5,7 @@ import { GET_USER_IS_FETCHING,
          GET_USER_IS_VALID
         } from "../Reducers/GetUser";
 import { getStats } from './GetStats';
-import { updateIsLoading, updateUserName } from './UserInfo';
+import { updateIsLoading } from './UserInfo';
 
 const userIsFetching = () => {
     return {
@@ -26,7 +26,7 @@ const userIsSuccessful = (data) => {
     }
 }
 
-export const userIsValid = (success) => {
+const userIsValid = (success) => {
     return{
         type: GET_USER_IS_VALID,
         payload: success
@@ -49,9 +49,6 @@ const userFetchData = (url, username) => {
             }
             if(newData.success === undefined) {
                 console.log("Username is not valid");
-                dispatch(userIsValid(false));
-                alert("Oops, the gamertag you entered has no stats!");
-                dispatch(updateUserName(""));
                 dispatch(updateIsLoading(false));
             }
         })

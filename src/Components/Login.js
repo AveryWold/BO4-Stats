@@ -4,8 +4,7 @@ import '../App.css';
 import Header from './Header/Header';
 import { connect } from 'react-redux';
 import { updateIsLoading } from '../Actions/UserInfo';
-import {getUser} from '../Actions/GetUser';
-import { Redirect } from 'react-router-dom';
+import Oops from '../Helpers/Oops';
 
 class Login extends Component {
   constructor(props){
@@ -48,28 +47,11 @@ class Login extends Component {
       }
       if(!success) {
         return (
-          <Redirect to={{
-              pathname: "/"
-          }}/>
-      )
+          <div>
+            <Oops/>
+          </div>
+        )
       }
-    // return (
-    //   <div>
-    //       <Header/>
-    //       <div>
-    //         {!isLoading ? (
-    //             <div>
-    //               <Stats isValid={isValid} username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute}
-    //                      tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
-    //                      domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
-    //               />
-    //             </div>
-    //         ) : (
-    //           <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
-    //         )}
-    //       </div>
-    //   </div>
-    // );
   }
 }
 
