@@ -1,1 +1,1 @@
-Added basic routing to app, working well.  Next step is to make more complex routes with props passing for login.
+Added basic validation to username. still a couple kinks to work out.
