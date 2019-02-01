@@ -48,12 +48,10 @@ class UserNameForm extends Component {
         }
         else {
             this.setState({showFormErrors: false, toGameStats: true, isUserNameValid: true, redirectToStats: true });
-            console.log("INSIDE GAMERTAG CHECK", this.state);
         }
     }
 
     render() {
-        console.log("RELOAD RENDER", this.state, this.props);
         const {toGameStats} = this.props;
         const {username} = this.props;
         if (this.state.redirectToStats || toGameStats) {
@@ -71,7 +69,7 @@ class UserNameForm extends Component {
             return(
                 <form>
                     <p>
-                        <UserNameInput username={username} onChange={this.handleChange} />
+                        <UserNameInput  value={username} name="username" onChange={this.handleChange} />
                         <button onClick={e => this.checkGamerTagInput(e)}>Get Stats</button>
                     </p>
                     {(!this.state.isUserNameValid) && this.state.showFormErrors && <FormErrors errors={this.state.formErrors} />}

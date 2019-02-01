@@ -20,7 +20,9 @@ export default {
         domdefends: null,
         domoffends: null,
         domkillstreak: null,
-        isLoading: true
+        isLoading: true,
+        username1: "",
+        username2: ""
     },
     GetStats: {
         isFetching: false,

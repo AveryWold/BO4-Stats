@@ -19,6 +19,8 @@ export const USER_INFO_UPDATE_DOMDEFENDS = "USER_INFO_UPDATE_DOMDEFENDS";
 export const USER_INFO_UPDATE_DOMOFFENDS = "USER_INFO_UPDATE_DOMOFFENDS";
 export const USER_INFO_UPDATE_DOMKILLSTREAK = "USER_INFO_UPDATE_DOMKILLSTREAK";
 export const USER_INFO_IS_LOADING = "USER_INFO_IS_LOADING";
+export const USER_INFO_UPDATE_USER_NAME1 = "USER_INFO_UPDATE_USER_NAME1";
+export const USER_INFO_UPDATE_USER_NAME2 = "USER_INFO_UPDATE_USER_NAME2";
 
 const UserInfo = (state={}, action) => {
     switch(action.type){
@@ -64,6 +66,10 @@ const UserInfo = (state={}, action) => {
             return {...state, domkillstreak: action.payload }
         case USER_INFO_IS_LOADING:
             return {...state, isLoading: action.payload }
+        case USER_INFO_UPDATE_USER_NAME1:
+            return {...state, username1: action.payload }
+        case USER_INFO_UPDATE_USER_NAME2:
+            return {...state, username2: action.payload }
         default:
             return state;
     }
