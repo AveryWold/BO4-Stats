@@ -21,8 +21,6 @@ export default {
         domoffends: null,
         domkillstreak: null,
         isLoading: true,
-        username1: "",
-        username2: ""
     },
     GetStats: {
         isFetching: false,
@@ -36,5 +34,18 @@ export default {
         isSuccessful: false,
         data: null,
         success: false
+    },
+    CompareInfo: {
+        username1: "",
+        username2: "",
+        ekia: null,
+        kills: null,
+        deaths: null,
+        wins: null,
+        losses: null,
+        longestKillstreak: null,
+        ekiapergame: null,
+        scoreperminute: null,
+        isLoading: true
     }
 }

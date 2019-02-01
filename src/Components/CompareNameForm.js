@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
 import {getUser} from '../Actions/GetUser';
-import { updateUserName1, updateUserName2 } from '../Actions/UserInfo';
+import { updateUserName1, updateUserName2 } from '../Actions/CompareInfo';
 import CompareNameInput from './CompareNameInput'
 import FormErrors from './FormErrors';
 
@@ -24,6 +24,12 @@ class CompareNameForm extends Component {
         this.checkGamerTagInput = this.checkGamerTagInput.bind(this);
     }
 
+    componentWillMount(){
+        const { dispatch } = this.props;
+        dispatch(updateUserName1(""));
+        dispatch(updateUserName2(""));
+    }
+
     handleChange1 = (event) => {
         this.setState({showFormErrors:false});
         const { dispatch } = this.props;
@@ -38,11 +44,12 @@ class CompareNameForm extends Component {
 
     checkGamerTagInput(e) {
         e.preventDefault();
+        console.log(this.props.username1, this.props.username2);
         let newFormErrors = this.state.formErrors;
         let validUsername = this.state.isUserNameValid;
         const { dispatch } = this.props;
-        dispatch(getUser(this.props.username1));
-        dispatch(getUser(this.props.username2));
+        // dispatch(getUser(this.props.username1));
+        // dispatch(getUser(this.props.username2));
 
         if (this.props.username1 === "" || this.props.username2 === "") {
             newFormErrors.validGamerTag = 'Please enter 2 valid gamer tags';
@@ -73,8 +80,8 @@ class CompareNameForm extends Component {
 
   const mapStateToProps = (state) => {
     return {
-      username1: state.UserInfo.username1,
-      username2: state.UserInfo.username2
+      username1: state.CompareInfo.username1,
+      username2: state.CompareInfo.username2,
     }
   }
 export default connect(mapStateToProps)(CompareNameForm)
