@@ -1,1 +1,1 @@
-Added basic validation to username. still a couple kinks to work out.
+Added the ability to compare 2 gamer tags and basic validation
