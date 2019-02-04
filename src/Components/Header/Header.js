@@ -17,7 +17,7 @@ class Header extends Component {
             <img src={url} className="bo4-logo" alt="logo"/>
           {/* </Link> */}
           <p className="header">
-            Check BO4 Stats
+            Get BO4 Stats
           </p>
           <div className="links">
             <ul>

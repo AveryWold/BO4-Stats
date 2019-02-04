@@ -67,13 +67,16 @@ class UserNameForm extends Component {
 
         if (!toGameStats){
             return(
-                <form>
-                    <p>
-                        <UserNameInput  value={username} name="username" onChange={this.handleChange} />
-                        <button onClick={e => this.checkGamerTagInput(e)}>Get Stats</button>
-                    </p>
-                    {(!this.state.isUserNameValid) && this.state.showFormErrors && <FormErrors errors={this.state.formErrors} />}
-                </form>
+                <div className="stats">
+                    <h1>Check Your Stats</h1>
+                    <form>
+                        <p>
+                            <UserNameInput  value={username} name="username" onChange={this.handleChange} />
+                            <button onClick={e => this.checkGamerTagInput(e)}>Get Stats</button>
+                        </p>
+                        {(!this.state.isUserNameValid) && this.state.showFormErrors && <FormErrors errors={this.state.formErrors} />}
+                    </form>
+                </div>
             );
         }
     }

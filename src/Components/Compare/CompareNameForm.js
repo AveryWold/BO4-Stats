@@ -80,7 +80,7 @@ class CompareNameForm extends Component {
       if(!toGameStats){
         return (
             <div className="compare">
-                <h1>Compare stats</h1>
+                <h1>Compare Stats</h1>
                 <form>
                     <p>
                         <CompareNameInput value={username1} name="username1" onChange={this.handleChange1} />
