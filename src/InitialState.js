@@ -33,19 +33,38 @@ export default {
         hasErrors: false,
         isSuccessful: false,
         data: null,
-        success: false
+        success: false,
+        success1: false,
+        success2: false
     },
     CompareInfo: {
         username1: "",
         username2: "",
-        ekia: null,
-        kills: null,
-        deaths: null,
-        wins: null,
-        losses: null,
-        longestKillstreak: null,
-        ekiapergame: null,
-        scoreperminute: null,
-        isLoading: true
+        ekia1: null,
+        kills1: null,
+        deaths1: null,
+        wins1: null,
+        losses1: null,
+        longestKillstreak1: null,
+        ekiapergame1: null,
+        scoreperminute1: null,
+        isLoading1: true,
+        ekia2: null,
+        kills2: null,
+        deaths2: null,
+        wins2: null,
+        losses2: null,
+        longestKillstreak2: null,
+        ekiapergame2: null,
+        scoreperminute2: null,
+        isLoading2: true,
+        gamesplayed1: null,
+        gamesplayed2: null
+    },
+    GetCompareStats: {
+        isFetching: false,
+        hasErrors: false,
+        isSuccessful: false,
+        data: null
     }
 }

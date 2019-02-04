@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Header from '../Components/Header/Header';
+import Header from '../Header/Header';
 import CompareNameForm from './CompareNameForm';
-import '../App.css';
+import '../../App.css';
 
 class Compare extends Component {
     render() {

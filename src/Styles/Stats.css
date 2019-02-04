@@ -27,16 +27,44 @@ table {
     margin-top: -34px;
 }
 
+.CompareTable {
+  border-top:1px solid orangered; 
+  border-right:1px solid orangered; 
+  border-left:1px solid orangered; 
+  border-bottom: 1px solid orangered;
+  margin-top: -200px;
+  table-layout: fixed;
+}
+
 td {
-  /* border-bottom: 1px solid orangered; */
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
   font-size: calc(10px + 2vmin);
 }
 
+th {
+  border-bottom: 1px solid orangered;
+  font-size: calc(10px + 2vmin);
+  color: orangered;
+  width: 49.8%;
+  background-color: black;
+  margin-top: -200px;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+
 .border {
   border-bottom: 1px solid orangered;
+}
+
+.border1 {
+  border-bottom: 1px solid orangered;
+  text-align: center;
+}
+
+.bottom {
+  text-align: center;
 }
 
 .Table2 {

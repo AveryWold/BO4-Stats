@@ -10,7 +10,8 @@ import Notfound from './Components/NotFound';
 import About from './Components/Header/About';
 import Contact from './Components/Header/Contact';
 import Login from './Components/Login';
-import Compare from './Components/Compare';
+import Compare from './Components/Compare/Compare';
+import LoginCompare from './Components/LoginCompare';
 
 Store.subscribe(() => {
     console.log(Store.getState());
@@ -38,6 +39,7 @@ ReactDOM.render(
                 <Route path="/contact" component={Contact} />
                 <Route path="/compare" component={Compare}/>
                 <MyRoute path="/stats/:username" Component={Login} />
+                <MyRoute path="/comparestats/:username1/:username2" Component={LoginCompare}/>
                 <Route component={Notfound} />
             </Switch>
         </Router>

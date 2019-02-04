@@ -12,7 +12,7 @@ class Stats extends Component {
     return (
       <div className="stats-table">
         <h1>
-          {'User Stats for ' + JSON.stringify(username)}
+          {'User Stats for ' + username}
         </h1>
         <OverallStats ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={this.props.longestkillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute} />
         <TDMStats  tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses} />
