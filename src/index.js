@@ -38,7 +38,7 @@ ReactDOM.render(
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/compare" component={Compare}/>
-                <MyRoute path="/stats/:username" Component={Login} />
+                <MyRoute path="/stats" Component={Login} />
                 <MyRoute path="/comparestats/:username1/:username2" Component={LoginCompare}/>
                 <Route component={Notfound} />
             </Switch>
