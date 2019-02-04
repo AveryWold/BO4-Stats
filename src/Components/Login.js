@@ -13,37 +13,41 @@ class Login extends Component {
   }
 
   render() {
-      const {username, success, ekia, kills, deaths, isLoading, wins, losses, longestKillstreak, ekiapergame, scoreperminute,
-            tdmwins, tdmdeaths, tdmkills, tdmlosses,
-            domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak, isValid} = this.props;
-      if(isLoading){
-        return (
+    const {username, success, ekia, kills, deaths, isLoading, wins, losses, longestKillstreak, ekiapergame, scoreperminute,
+      tdmwins, tdmdeaths, tdmkills, tdmlosses,
+      domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak, isValid
+    } = this.props;
+      
+    if(isLoading){
+      return (
+        <div>
+          <Header/>
+          <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
+        </div>
+      )
+    }
+      
+    if(!isLoading && success){
+      return (
+        <div>
+          <Header/>
           <div>
-            <Header/>
-            <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
+            <Stats isValid={isValid} username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute}
+              tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
+              domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
+            />
           </div>
-        )
-      }
-      if(!isLoading && success){
-        return (
-          <div>
-            <Header/>
-            <div>
-              <Stats isValid={isValid} username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute}
-                tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
-                domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
-              />
-            </div>
-          </div>
-        )
-      }
-      if(!success) {
-        return (
-          <div>
-            <Oops/>
-          </div>
-        )
-      }
+        </div>
+      )
+    }
+      
+    if(!success) {
+      return (
+        <div>
+          <Oops/>
+        </div>
+      )
+    }
   }
 }
 
