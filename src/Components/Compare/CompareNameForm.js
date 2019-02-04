@@ -45,7 +45,6 @@ class CompareNameForm extends Component {
 
     checkGamerTagInput(e) {
         e.preventDefault();
-        console.log(this.props.username1, this.props.username2);
         let newFormErrors = this.state.formErrors;
         let validUsername = this.state.isUserNameValid;
         const { dispatch } = this.props;

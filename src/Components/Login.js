@@ -7,17 +7,9 @@ import { updateIsLoading } from '../Actions/UserInfo';
 import Oops from '../Helpers/Oops';
 
 class Login extends Component {
-  constructor(props){
-    super(props)
-        this.state = {
-        };
-  }
-
   componentDidMount(){
     const { dispatch } = this.props;
-    // const {username} = this.props.history.location.state;
     dispatch(updateIsLoading(true));
-    // dispatch(getUser(username));
   }
 
   render() {

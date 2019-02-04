@@ -7,7 +7,6 @@ import CompareOops from '../Helpers/CompareOops';
 import CompareStats from './Compare/CompareStats';
 
 class LoginCompare extends Component {
-
   componentDidMount(){
     const { dispatch } = this.props;
     dispatch(updateIsLoading1(true));
@@ -15,38 +14,42 @@ class LoginCompare extends Component {
   }
 
   render() {
-      const {username1, success1, ekia1, kills1, deaths1, isLoading1, wins1, losses1, longestKillstreak1, ekiapergame1, scoreperminute1, gamesplayed1,
-            username2, success2, ekia2, kills2, deaths2, isLoading2, wins2, losses2, longestKillstreak2, ekiapergame2, scoreperminute2, gamesplayed2, isValid} = this.props;
-      if(isLoading1 || isLoading2){
-        return (
+    const {username1, success1, ekia1, kills1, deaths1, isLoading1, wins1, losses1, longestKillstreak1, ekiapergame1, scoreperminute1, gamesplayed1,
+      username2, success2, ekia2, kills2, deaths2, isLoading2, wins2, losses2, longestKillstreak2, ekiapergame2, scoreperminute2, gamesplayed2, isValid
+    } = this.props;
+    
+    if(isLoading1 || isLoading2){
+      return (
+        <div>
+          <Header/>
+          <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
+        </div>
+      )
+    }
+
+    if(!isLoading1 && success1 && !isLoading2 && success2){
+      return (
+        <div>
+          <Header/>
           <div>
-            <Header/>
-            <p className="loading">Loading<span>.</span><span>.</span><span>.</span></p>
+            <CompareStats isValid={isValid} username1={username1} ekia1={ekia1} kills1={kills1} deaths1={deaths1} wins1={wins1} 
+              losses1={losses1} longestkillstreak1={longestKillstreak1} ekiapergame1={ekiapergame1} 
+              scoreperminute1={scoreperminute1} gamesplayed1={gamesplayed1}
+              username2={username2} ekia2={ekia2} kills2={kills2} deaths2={deaths2} wins2={wins2} losses2={losses2} 
+              longestkillstreak2={longestKillstreak2} ekiapergame2={ekiapergame2} scoreperminute2={scoreperminute2} gamesplayed2={gamesplayed2}
+            />
           </div>
-        )
-      }
-      if(!isLoading1 && success1 && !isLoading2 && success2){
-        return (
-          <div>
-            <Header/>
-            <div>
-              <CompareStats isValid={isValid} username1={username1} ekia1={ekia1} kills1={kills1} deaths1={deaths1} wins1={wins1} 
-                losses1={losses1} longestkillstreak1={longestKillstreak1} ekiapergame1={ekiapergame1} 
-                scoreperminute1={scoreperminute1} gamesplayed1={gamesplayed1}
-                username2={username2} ekia2={ekia2} kills2={kills2} deaths2={deaths2} wins2={wins2} losses2={losses2} 
-                longestkillstreak2={longestKillstreak2} ekiapergame2={ekiapergame2} scoreperminute2={scoreperminute2} gamesplayed2={gamesplayed2}
-              />
-            </div>
-          </div>
-        )
-      }
-      if(!success1 || !success2) {
-        return (
-          <div>
-            <CompareOops/>
-          </div>
-        )
-      }
+        </div>
+      )
+    }
+      
+    if(!success1 || !success2) {
+      return (
+        <div>
+          <CompareOops/>
+        </div>
+      )
+    }
   }
 }
 

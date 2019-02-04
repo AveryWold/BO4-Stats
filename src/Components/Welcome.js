@@ -3,11 +3,6 @@ import '../App.css';
 import UserNameForm from './UserNameForm';
 
 class Welcome extends Component {
-  constructor(props){
-    super(props)
-    this.state = {};
-  }
-
   render() {
     return (
       <div className="App">

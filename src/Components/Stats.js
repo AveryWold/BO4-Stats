@@ -7,8 +7,10 @@ import DOMStats from './StatsComponents/DOMStats';
 class Stats extends Component {
   render() {
     const {username, ekia, kills, deaths, wins, losses, ekiapergame, scoreperminute,
-        tdmwins, tdmdeaths, tdmkills, tdmlosses,
-        domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak} = this.props;
+      tdmwins, tdmdeaths, tdmkills, tdmlosses,
+      domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak
+    } = this.props;
+    
     return (
       <div className="stats-table">
         <h1>
