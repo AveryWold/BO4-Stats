@@ -15,9 +15,6 @@ class Contact extends Component {
             <div className="main">
               <div className="contact">
                 <h1>Email: averyw@magenic.com</h1>
-                <p>
-                  
-                </p>
               </div>            
             </div>
           </div>    

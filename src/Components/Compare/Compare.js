@@ -9,7 +9,7 @@ class Compare extends Component {
           <div className="App">
             <Header/> 
             <div className="Background">  
-              <div className="main">
+              <div>
                 <CompareNameForm username={this.props.username} />
               </div>
             </div>    
