@@ -96,9 +96,10 @@ h1 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -155px;
+  margin-top: -170px;
   font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: -40px;
 }
 
 .loading {
@@ -110,7 +111,7 @@ h1 {
 
 ul.header {
   background-color:#2B2F3F;
-  padding: 0;
+  padding: 20px;
   -webkit-box-shadow: 3px 7px 10px 0px rgba(45, 46, 67, 0.85);
   -moz-box-shadow:    3px 7px 10px 0px rgba(45, 46, 67, 0.85);
   box-shadow:         3px 7px 10px 0px rgba(45, 46, 67, 0.85);
@@ -143,13 +144,14 @@ a:hover, a:active {
 .links{
   padding-right: 20px;
   color: orangered;
+  padding-bottom: 200px;
 }
 
 .stats, .about, .contact {
   background-color: rgba(0, 0, 0, 0.0);
   margin-top: 30px;  
   /* height: 100%; */
-  padding-bottom: 200px;
+  margin-bottom: 200px;
 }
 
 .compare {
@@ -157,7 +159,7 @@ a:hover, a:active {
   margin-top: 30px;  
   /* height: 100%; */
   max-height: 100px !important;
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
 }
 
 li  {

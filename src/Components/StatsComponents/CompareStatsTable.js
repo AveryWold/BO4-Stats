@@ -18,7 +18,7 @@ class CompareStats extends Component {
                 <Table className="CompareTable">
                     <Thead>
                         <Tr>
-                            <Th>Stats Compare</Th>
+                            <Th></Th>
                             <Th>{this.props.username1}</Th>
                             <Th>{this.props.username2}</Th>
                         </Tr>

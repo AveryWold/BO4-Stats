@@ -16,43 +16,47 @@ class OverallStats extends Component {
                     <Tbody>
                         <Tr >
                             <Td className="border">EKIA</Td>
-                            <Td className="border">{this.props.ekia}</Td>
+                            <Td className="border1">{this.props.ekia}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">KILLS</Td>
-                            <Td className="border">{this.props.kills}</Td>
+                            <Td className="border1">{this.props.kills}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">DEATHS</Td>
-                            <Td className="border">{this.props.deaths}</Td>
+                            <Td className="border1">{this.props.deaths}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">LONGEST KILLSTREAK</Td>
-                            <Td className="border">{this.props.longestkillstreak}</Td>
+                            <Td className="border1">{this.props.longestkillstreak}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">SCORE PER MINUTE</Td>
-                            <Td className="border">{spm}</Td>
+                            <Td className="border1">{spm}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">EKIA PER GAME</Td>
-                            <Td className="border">{epg}</Td>
+                            <Td className="border1">{epg}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">EKIA/DEATH RATIO</Td>
-                            <Td className="border">{kd}</Td>
+                            <Td className="border1">{kd}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">WINS</Td>
-                            <Td className="border">{this.props.wins}</Td>
+                            <Td className="border1">{this.props.wins}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">LOSSES</Td>
-                            <Td className="border">{this.props.losses}</Td>
+                            <Td className="border1">{this.props.losses}</Td>
                         </Tr>
                         <Tr>
-                            <Td>WIN/LOSS RATIO</Td>
-                            <Td>{wl}</Td>
+                            <Td className="border">WIN/LOSS RATIO</Td>
+                            <Td className="border1">{wl}</Td>
+                        </Tr>
+                        <Tr>
+                            <Td>GAMES PLAYED</Td>
+                            <Td className="bottom">{this.props.gamesplayed}</Td>
                         </Tr>
                     </Tbody>
                 </Table>

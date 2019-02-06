@@ -21,6 +21,7 @@ export default {
         domoffends: null,
         domkillstreak: null,
         isLoading: true,
+        gamesplayed: null
     },
     GetStats: {
         isFetching: false,

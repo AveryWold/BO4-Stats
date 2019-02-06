@@ -13,15 +13,15 @@ class DOMStats extends Component {
                     <Tbody>
                         <Tr>
                             <Td className="border">KILLS</Td>
-                            <Td className="border">{this.props.domkills}</Td>
+                            <Td className="border1">{this.props.domkills}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">DEATHS</Td>
-                            <Td className="border">{this.props.domdeaths}</Td>
+                            <Td className="border1">{this.props.domdeaths}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">K/D</Td>
-                            <Td className="border">{kd}</Td>
+                            <Td className="border1">{kd}</Td>
                         </Tr>
                         {/* <Tr>
                             <Td className="border">LONGEST KILLSTREAK</Td>
@@ -29,23 +29,23 @@ class DOMStats extends Component {
                         </Tr> */}
                         <Tr>
                             <Td className="border">DEFENDS</Td>
-                            <Td className="border">{this.props.domdefends}</Td>
+                            <Td className="border1">{this.props.domdefends}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">CAPTURES</Td>
-                            <Td className="border">{this.props.domoffends}</Td>
+                            <Td className="border1">{this.props.domoffends}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">WINS</Td>
-                            <Td className="border">{this.props.domwins}</Td>
+                            <Td className="border1">{this.props.domwins}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">LOSSES</Td>
-                            <Td className="border">{this.props.domlosses}</Td>
+                            <Td className="border1">{this.props.domlosses}</Td>
                         </Tr>
                         <Tr>
                             <Td>W/L</Td>
-                            <Td>{wl}</Td>
+                            <Td className="bottom">{wl}</Td>
                         </Tr>
                     </Tbody>
                 </Table>

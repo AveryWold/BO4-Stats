@@ -23,7 +23,8 @@ import { updateEkia,
          updateDomOffends, 
          updateDomKillstreak, 
          updateLosses, 
-         updateIsLoading
+         updateIsLoading,
+         updateGamesPlayed
         } from './UserInfo';
 
 const statsIsFetching = () => {
@@ -60,6 +61,7 @@ const statsFetchData = (url) => {
             longestKillstreak: json.data.data.mp.lifetime.all.longestKillstreak,
             ekiapergame: json.data.data.mp.lifetime.all.ekiaPerGame,
             scoreperminute: json.data.data.mp.lifetime.all.scorePerMinute,
+            gamesplayed: json.data.data.mp.lifetime.all.totalGamesPlayed,
     
             tdmkills: json.data.data.mp.lifetime.mode.tdm.kills,
             tdmdeaths: json.data.data.mp.lifetime.mode.tdm.deaths,
@@ -83,6 +85,7 @@ const statsFetchData = (url) => {
                 dispatch(updateLongestKillstreak(newData.longestKillstreak));
                 dispatch(updateEkiaPerGame(newData.ekiapergame));
                 dispatch(updateScorePerMinute(newData.scoreperminute));
+                dispatch(updateGamesPlayed(newData.gamesplayed));
 
                 dispatch(updateTdmKills(newData.tdmkills));
                 dispatch(updateTdmDeaths(newData.tdmdeaths));

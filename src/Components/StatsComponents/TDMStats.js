@@ -13,27 +13,27 @@ class TDMStats extends Component {
                     <Tbody>
                         <Tr>
                             <Td className="border">KILLS</Td>
-                            <Td className="border">{this.props.tdmkills}</Td>
+                            <Td className="border1">{this.props.tdmkills}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">DEATHS</Td>
-                            <Td className="border">{this.props.tdmdeaths}</Td>
+                            <Td className="border1">{this.props.tdmdeaths}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">K/D</Td>
-                            <Td className="border">{kd}</Td>
+                            <Td className="border1">{kd}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">WINS</Td>
-                            <Td className="border">{this.props.tdmwins}</Td>
+                            <Td className="border1">{this.props.tdmwins}</Td>
                         </Tr>
                         <Tr>
                             <Td className="border">LOSSES</Td>
-                            <Td className="border">{this.props.tdmlosses}</Td>
+                            <Td className="border1">{this.props.tdmlosses}</Td>
                         </Tr>
                         <Tr>
                             <Td>W/L</Td>
-                            <Td>{wl}</Td>
+                            <Td className="bottom">{wl}</Td>
                         </Tr>
                     </Tbody>
                 </Table>

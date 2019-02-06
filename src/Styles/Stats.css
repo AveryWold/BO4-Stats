@@ -33,7 +33,7 @@ table {
   border-left:1px solid orangered; 
   border-bottom: 1px solid orangered;
   margin-top: -200px;
-  table-layout: fixed;
+  /* table-layout: fixed; */
 }
 
 td {
@@ -52,6 +52,9 @@ th {
   margin-top: -200px;
   padding-top: 25px;
   padding-bottom: 30px;
+  width: 50%;
+  padding-right: 20px;
+
 }
 
 .border {
