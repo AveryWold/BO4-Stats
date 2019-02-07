@@ -23,10 +23,6 @@ class DOMStats extends Component {
                             <Td className="border">K/D</Td>
                             <Td className="border1">{kd}</Td>
                         </Tr>
-                        {/* <Tr>
-                            <Td className="border">LONGEST KILLSTREAK</Td>
-                            <Td className="border">{this.props.domkillstreak}</Td>
-                        </Tr> */}
                         <Tr>
                             <Td className="border">DEFENDS</Td>
                             <Td className="border1">{this.props.domdefends}</Td>
