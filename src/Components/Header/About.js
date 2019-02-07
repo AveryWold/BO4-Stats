@@ -10,7 +10,7 @@ class About extends Component {
         <div className="Background"> 
           <div className="main">
             <div className="about">
-              <h1>This is an app to check PSN black ops 4 stats</h1>
+              <h1>An app to check PSN black ops 4 stats</h1>
             </div>
           </div>
         </div>    

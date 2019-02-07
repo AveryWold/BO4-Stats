@@ -25,6 +25,8 @@ table {
     border-left:1px solid orangered; 
     border-bottom: 1px solid orangered;
     margin-top: -34px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .CompareTable {
@@ -34,6 +36,7 @@ table {
   border-bottom: 1px solid orangered;
   margin-top: -200px;
   /* table-layout: fixed; */
+  border-radius: 5px;
 }
 
 td {
@@ -54,7 +57,6 @@ th {
   padding-bottom: 30px;
   width: 50%;
   padding-right: 20px;
-
 }
 
 .border {
@@ -73,14 +75,19 @@ th {
 .Table2 {
   margin-top: 10px;
 }
-  
-  .responsiveTable td .tdBefore {
-    display: none;
-  }
 
-  td {
-    width: 50%;
-  }
+.Table2 caption {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+  
+.responsiveTable td .tdBefore {
+  display: none;
+}
+
+td {
+  width: 50%;
+}
 
 caption{
   background-color: orangered;
@@ -112,13 +119,18 @@ button {
   border: 1px solid orangered;
 }
 
-  .stats-table {
-      background-color: rgba(0, 0, 0, 0.0);
-      margin-top: 230px;  
-      height: 100%;
-      padding-bottom: 200px;
-      font-family: Helvetica, sans-serif;
-    }
+.stats-table {
+  background-color: rgba(0, 0, 0, 0.0);
+  margin-top: 230px;  
+  height: 100%;
+  padding-bottom: 200px;
+  font-family: Helvetica, sans-serif;
+}
+
+.stats-table h1 {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
   
   @media screen and (max-width: 40em) {
     /*
