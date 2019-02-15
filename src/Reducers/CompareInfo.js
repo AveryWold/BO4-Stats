@@ -20,6 +20,10 @@ export const USER_INFO_UPDATE_USER_NAME1 = "USER_INFO_UPDATE_USER_NAME1";
 export const USER_INFO_UPDATE_USER_NAME2 = "USER_INFO_UPDATE_USER_NAME2";
 export const USER_INFO_UPDATE_GAMESPLAYED1 = "USER_INFO_UPDATE_GAMESPLAYED1";
 export const USER_INFO_UPDATE_GAMESPLAYED2 = "USER_INFO_UPDATE_GAMESPLAYED2";
+export const USER_INFO_UPDATE_LEVEL1 = "USER_INFO_UPDATE_LEVEL1";
+export const USER_INFO_UPDATE_LEVEL2 = "USER_INFO_UPDATE_LEVEL2";
+export const USER_INFO_UPDATE_PRESTIGE1 = "USER_INFO_UPDATE_PRESTIGE1";
+export const USER_INFO_UPDATE_PRESTIGE2 = "USER_INFO_UPDATE_PRESTIGE2";
 
 const CompareInfo = (state={}, action) => {
     switch(action.type){
@@ -67,6 +71,14 @@ const CompareInfo = (state={}, action) => {
             return {...state, gamesplayed1: action.payload }
         case USER_INFO_UPDATE_GAMESPLAYED2:
             return {...state, gamesplayed2: action.payload }
+        case USER_INFO_UPDATE_LEVEL1:
+            return {...state, level1: action.payload}
+        case USER_INFO_UPDATE_LEVEL2:
+            return {...state, level2: action.payload}
+        case USER_INFO_UPDATE_PRESTIGE1:
+            return {...state, prestige1: action.payload}
+        case USER_INFO_UPDATE_PRESTIGE2:
+            return {...state, prestige2: action.payload}
         default:
             return state;
     }

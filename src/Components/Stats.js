@@ -6,7 +6,7 @@ import DOMStats from './StatsComponents/DOMStats';
 
 class Stats extends Component {
   render() {
-    const {username, ekia, kills, deaths, wins, losses, ekiapergame, scoreperminute, gamesplayed,
+    const {username, level, prestige, ekia, kills, deaths, wins, losses, ekiapergame, scoreperminute, gamesplayed,
       tdmwins, tdmdeaths, tdmkills, tdmlosses,
       domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak
     } = this.props;
@@ -16,7 +16,7 @@ class Stats extends Component {
         <h1>
           {'User Stats for: ' + username}
         </h1>
-        <OverallStats ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={this.props.longestkillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute} gamesplayed={gamesplayed} />
+        <OverallStats level={level} prestige={prestige} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={this.props.longestkillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute} gamesplayed={gamesplayed} />
         <TDMStats  tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses} />
         <DOMStats domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} />
       </div>

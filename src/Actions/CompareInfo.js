@@ -20,7 +20,11 @@ import {
     USER_INFO_UPDATE_USER_NAME1,
     USER_INFO_UPDATE_USER_NAME2,
     USER_INFO_UPDATE_GAMESPLAYED1,
-    USER_INFO_UPDATE_GAMESPLAYED2
+    USER_INFO_UPDATE_GAMESPLAYED2,
+    USER_INFO_UPDATE_LEVEL1,
+    USER_INFO_UPDATE_LEVEL2,
+    USER_INFO_UPDATE_PRESTIGE1,
+    USER_INFO_UPDATE_PRESTIGE2
 } from '../Reducers/CompareInfo';
 
 export const updateUserName1 = (username1) => {
@@ -174,5 +178,33 @@ export const updateGamesPlayed2 = (gamesplayed2) => {
     return {
         type: USER_INFO_UPDATE_GAMESPLAYED2,
         payload: gamesplayed2
+    }
+}
+
+export const updateLevel1 = (level1) => {
+    return {
+        type: USER_INFO_UPDATE_LEVEL1,
+        payload: level1
+    }
+}
+
+export const updateLevel2 = (level2) => {
+    return {
+        type: USER_INFO_UPDATE_LEVEL2,
+        payload: level2
+    }
+}
+
+export const updatePrestige1 = (prestige1) => {
+    return {
+        type: USER_INFO_UPDATE_PRESTIGE1,
+        payload: prestige1
+    }
+}
+
+export const updatePrestige2 = (prestige2) => {
+    return {
+        type: USER_INFO_UPDATE_PRESTIGE2,
+        payload: prestige2
     }
 }

@@ -25,6 +25,16 @@ class CompareStats extends Component {
                     </Thead>
                     <Tbody>
                         <Tr >
+                            <Td className="border">PRESTIGE</Td>
+                            <Td className="border1">{this.props.prestige1}</Td>
+                            <Td className="border1">{this.props.prestige2}</Td>
+                        </Tr>
+                        <Tr >
+                            <Td className="border">RANK</Td>
+                            <Td className="border1">{this.props.level1}</Td>
+                            <Td className="border1">{this.props.level2}</Td>
+                        </Tr>
+                        <Tr >
                             <Td className="border">EKIA</Td>
                             <Td className="border1">{this.props.ekia1}</Td>
                             <Td className="border1">{this.props.ekia2}</Td>

@@ -26,7 +26,11 @@ import { updateEkia1,
          updateLosses2, 
          updateIsLoading2,
          updateGamesPlayed1,
-         updateGamesPlayed2
+         updateGamesPlayed2,
+         updateLevel1,
+         updateLevel2,
+         updatePrestige1,
+         updatePrestige2
         } from './CompareInfo';
 
 const statsIsFetching1 = () => {
@@ -74,6 +78,8 @@ const statsFetchData1 = (url) => {
         .then(json => (
           {
             username1: json.data.data.username,
+            level1: json.data.data.mp.level,
+            prestige1: json.data.data.mp.prestige,
             ekia1: json.data.data.mp.lifetime.all.ekia,
             kills1: json.data.data.mp.lifetime.all.kills,
             deaths1: json.data.data.mp.lifetime.all.deaths,
@@ -85,6 +91,8 @@ const statsFetchData1 = (url) => {
             gamesplayed1: json.data.data.mp.lifetime.all.totalGamesPlayed
           }))
             .then((newData) => {
+                dispatch(updateLevel1(newData.level1));
+                dispatch(updatePrestige1(newData.prestige1));
                 dispatch(updateEkia1(newData.ekia1));
                 dispatch(updateKills1(newData.kills1));
                 dispatch(updateDeaths1(newData.deaths1));
@@ -110,6 +118,8 @@ const statsFetchData2 = (url) => {
         .then(json => (
           {
             username2: json.data.data.username,
+            level2: json.data.data.mp.level,
+            prestige2: json.data.data.mp.prestige,
             ekia2: json.data.data.mp.lifetime.all.ekia,
             kills2: json.data.data.mp.lifetime.all.kills,
             deaths2: json.data.data.mp.lifetime.all.deaths,
@@ -121,6 +131,8 @@ const statsFetchData2 = (url) => {
             gamesplayed2: json.data.data.mp.lifetime.all.totalGamesPlayed
           }))
             .then((newData) => {
+                dispatch(updateLevel2(newData.level2));
+                dispatch(updatePrestige2(newData.prestige2));
                 dispatch(updateEkia2(newData.ekia2));
                 dispatch(updateKills2(newData.kills2));
                 dispatch(updateDeaths2(newData.deaths2));

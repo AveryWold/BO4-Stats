@@ -13,7 +13,7 @@ class Login extends Component {
   }
 
   render() {
-    const {username, success, ekia, kills, deaths, isLoading, wins, losses, longestKillstreak, ekiapergame, scoreperminute, gamesplayed,
+    const {username, success, level, prestige, ekia, kills, deaths, isLoading, wins, losses, longestKillstreak, ekiapergame, scoreperminute, gamesplayed,
       tdmwins, tdmdeaths, tdmkills, tdmlosses,
       domwins, domdeaths, domkills, domlosses, domoffends, domdefends, domkillstreak, isValid
     } = this.props;
@@ -32,7 +32,7 @@ class Login extends Component {
         <div>
           <Header/>
           <div>
-            <Stats isValid={isValid} username={username} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute} gamesplayed={gamesplayed}
+            <Stats isValid={isValid} username={username} level={level} prestige={prestige} ekia={ekia} kills={kills} deaths={deaths} wins={wins} losses={losses} longestkillstreak={longestKillstreak} ekiapergame={ekiapergame} scoreperminute={scoreperminute} gamesplayed={gamesplayed}
               tdmkills={tdmkills} tdmdeaths={tdmdeaths} tdmwins={tdmwins} tdmlosses={tdmlosses}
               domkills={domkills} domdeaths={domdeaths} domwins={domwins} domlosses={domlosses} domoffends={domoffends} domdefends={domdefends} domkillstreak={domkillstreak} 
             />
@@ -75,7 +75,9 @@ const mapStateToProps = (state) => {
     domkillstreak: state.UserInfo.domkillstreak,
     isLoading: state.UserInfo.isLoading,
     success: state.GetUser.success,
-    gamesplayed: state.UserInfo.gamesplayed
+    gamesplayed: state.UserInfo.gamesplayed,
+    level: state.UserInfo.level,
+    prestige: state.UserInfo.prestige
   }
 }
 

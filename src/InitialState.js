@@ -21,7 +21,9 @@ export default {
         domoffends: null,
         domkillstreak: null,
         isLoading: true,
-        gamesplayed: null
+        gamesplayed: null,
+        level: null,
+        prestige: null
     },
     GetStats: {
         isFetching: false,
@@ -60,7 +62,11 @@ export default {
         scoreperminute2: null,
         isLoading2: true,
         gamesplayed1: null,
-        gamesplayed2: null
+        gamesplayed2: null,
+        level1: null,
+        level2: null,
+        prestige1: null,
+        prestige2: null
     },
     GetCompareStats: {
         isFetching: false,

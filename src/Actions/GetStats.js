@@ -24,7 +24,9 @@ import { updateEkia,
          updateDomKillstreak, 
          updateLosses, 
          updateIsLoading,
-         updateGamesPlayed
+         updateGamesPlayed,
+         updateLevel,
+         updatePrestige
         } from './UserInfo';
 
 const statsIsFetching = () => {
@@ -53,6 +55,8 @@ const statsFetchData = (url) => {
         .then(json => (
           {
             username: json.data.data.username,
+            level: json.data.data.mp.level,
+            prestige: json.data.data.mp.prestige,
             ekia: json.data.data.mp.lifetime.all.ekia,
             kills: json.data.data.mp.lifetime.all.kills,
             deaths: json.data.data.mp.lifetime.all.deaths,
@@ -77,6 +81,8 @@ const statsFetchData = (url) => {
             domkillstreak: json.data.data.mp.lifetime.mode.dom.killStreak,
           }))
             .then((newData) => {
+                dispatch(updateLevel(newData.level));
+                dispatch(updatePrestige(newData.prestige));
                 dispatch(updateEkia(newData.ekia));
                 dispatch(updateKills(newData.kills));
                 dispatch(updateDeaths(newData.deaths));

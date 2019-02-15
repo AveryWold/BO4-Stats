@@ -15,6 +15,14 @@ class OverallStats extends Component {
                     <caption>Overall</caption>
                     <Tbody>
                         <Tr >
+                            <Td className="border">PRESTIGE</Td>
+                            <Td className="border1">{this.props.prestige}</Td>
+                        </Tr>
+                        <Tr >
+                            <Td className="border">RANK</Td>
+                            <Td className="border1">{this.props.level}</Td>
+                        </Tr>
+                        <Tr >
                             <Td className="border">EKIA</Td>
                             <Td className="border1">{this.props.ekia}</Td>
                         </Tr>

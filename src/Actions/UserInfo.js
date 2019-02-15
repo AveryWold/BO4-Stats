@@ -20,7 +20,9 @@ import {
     USER_INFO_UPDATE_DOMOFFENDS,
     USER_INFO_UPDATE_DOMKILLSTREAK,
     USER_INFO_IS_LOADING,
-    USER_INFO_GAMESPLAYED
+    USER_INFO_GAMESPLAYED,
+    USER_INFO_UPDATE_LEVEL,
+    USER_INFO_UPDATE_PRESTIGE
 } from '../Reducers/UserInfo';
 
 export const updateUserName = (username) => {
@@ -174,5 +176,19 @@ export const updateGamesPlayed = (gamesplayed) => {
     return {
         type: USER_INFO_GAMESPLAYED,
         payload: gamesplayed
+    }
+}
+
+export const updateLevel = (level) => {
+    return {
+        type: USER_INFO_UPDATE_LEVEL,
+        payload: level
+    }
+}
+
+export const updatePrestige = (prestige) => {
+    return {
+        type: USER_INFO_UPDATE_PRESTIGE,
+        payload: prestige
     }
 }

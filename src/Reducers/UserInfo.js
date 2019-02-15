@@ -20,6 +20,8 @@ export const USER_INFO_UPDATE_DOMOFFENDS = "USER_INFO_UPDATE_DOMOFFENDS";
 export const USER_INFO_UPDATE_DOMKILLSTREAK = "USER_INFO_UPDATE_DOMKILLSTREAK";
 export const USER_INFO_IS_LOADING = "USER_INFO_IS_LOADING";
 export const USER_INFO_GAMESPLAYED = "USER_INFOR_GAMESPLAYED";
+export const USER_INFO_UPDATE_LEVEL = "USER_INFO_UPDATE_LEVEL";
+export const USER_INFO_UPDATE_PRESTIGE = "USER_INFO_UPDATE_PRESTIGE";
 
 const UserInfo = (state={}, action) => {
     switch(action.type){
@@ -67,6 +69,10 @@ const UserInfo = (state={}, action) => {
             return {...state, isLoading: action.payload }
         case USER_INFO_GAMESPLAYED:
             return {...state, gamesplayed: action.payload}
+        case USER_INFO_UPDATE_LEVEL:
+            return {...state, level: action.payload}
+        case USER_INFO_UPDATE_PRESTIGE:
+            return {...state, prestige: action.payload}
         default:
             return state;
     }
